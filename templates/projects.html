@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Project</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="centered-div">
+        <h1>My Project!</h1>
+        <a href="{{ url_for('index') }}">
+            <button>Home</button>
+        </a>
+        <table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Tecnologias</th>
+                <th>Descrição</th>
+                <th>Data</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in data %}
+                <tr>
+                  <td>{{ item.nome }}</td>
+                  <td>{{ item.tecnologias }}</td> 
+                  <td>{{ item.descricao }}</td> 
+                  <td>{{ item.data }}</td> 
+                  <td><a href="{{ item.repositorio }}"> Github</a> </td> 
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+  </body>
+</html>
