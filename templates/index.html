@@ -17,10 +17,12 @@
             <p>{{ description_low }}</p>
           </div>
           <div class="profile-footer">
-            <a href="https://www.linkedin.com/in/marcus-sandi/" target="_blank">Ver meu perfil no LinkedIn</a>
-            <!-- <a href="{{ url_for('project') }}">
-                <button>Projetos</button>
-            </a> -->
+            <a href="https://www.linkedin.com/in/marcus-sandi/" target="_blank">
+              <img src="{{ url_for('static', filename='images/lkd.png') }}" alt="linkedin icon" class="icon">
+            </a>
+            <a href="https://www.github.com/marcusmix" target="_blank">
+              <img src="{{ url_for('static', filename='images/github.png') }}" alt="github icon" class="icon">
+            </a>
           </div>
         </div>
       </div>
@@ -29,28 +31,34 @@
       <div class="container container-overflow">
         <div class="centered-div">
           <h2>Projetos selecionados em análise de dados, automações e dashboards.</h2>
+          <div class="card-out">
           {% for item in data %}
             <hr>  
-            <div class="card-out">
-              <div class="card">
+            <div class="card">
                 <div class="card-content">
                     <h3 class="card-title">{{ item.nome }}</h3>
                     <p class="card-description">
                       {{ item.descricao }}
                     </p>
-                    <p class="card-date">Data: {{ item.data }}</p>
                     <img src="{{ item.imagem }}" alt="{{ item.nome }}" class="card-image">
-                    <p class="card-technologies">
-                          Tecnologias:
-                          {% for tecnologia in item.tecnologias.split(', ') %}
-                            <span class="badge {{ tecnologia }}">{{ tecnologia }}</span>
-                          {% endfor %}
-                    </p>
+                    <div class="date-card">
+                      <h4 class="card-date">Data:</h4>
+                      <p> {{ item.data }}</p>
+                    </div>
+                    <h4 class="card-technologies">
+                      Tecnologias:
+                      {% for tecnologia in item.tecnologias.split(', ') %}
+                        <span class="badge {{ tecnologia }}">{{ tecnologia }}</span>
+                      {% endfor %}
+                    </h4>
                     <a href="{{ item.link }}" class="card-link" target="_blank">Acessar Projeto</a>
                 </div>
             </div>
-            {% endfor %}
+          {% endfor %}
           </div>
+        </div>
+        <div class="footer">
+          fim
         </div>
     </div>
   </body>
