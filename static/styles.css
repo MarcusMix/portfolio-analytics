@@ -1,20 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter','Fira Sans','PT Sans', 'Poppins', sans-serif;
     background-color: #ffffff;
     margin: 0;
     padding: 0;
     height: 100vh;
     overflow: hidden;
     display: flex;
+    color: #333333;
 }
 
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 .container-overflow {
@@ -30,10 +33,12 @@ body {
 }
 
 .centered-div h2 {
-    text-align: justify;
+    text-align: left;
     width: 500px;
-    margin-top: 100px;
+    margin-top: 50px;
     margin-left: 40px;
+    font-size: 20px;
+    font-weight: 700;
 }
 
 .profile {
@@ -75,20 +80,19 @@ img {
     white-space: nowrap;
     vertical-align: baseline;
     border-radius: 0.375rem;
-    background-color: #007bff; /* Azul por padrão, você pode alterar conforme necessário */
+    background-color: #007bff;
     margin-right: 0.5em;
-    margin-bottom: 0.5em; /* Adiciona espaço entre as linhas, caso haja muitas tecnologias */
+    margin-bottom: 0.5em; 
 }
 
 .Python {
-    background-color: rgb(206, 63, 52);
+    background-color: rgb(132, 52, 206);
 }
-
 
 h1 {
     color: #333;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 50px;
     text-align: left;
 }
 
@@ -214,10 +218,11 @@ a:hover {
 }
 
 .card-title {
-    font-size: 1.2rem;
+    font-size: 18px;
     color: #333;
     margin: 0 0 10px;
     text-align: left;
+    font-weight: 600;
 }
 
 .card-technologies {
@@ -284,7 +289,7 @@ hr {
     height: 2px;
     width: calc(80% - 50px);
     float: left;
-    background: rgb(189, 189, 189);
+    background: rgb(224, 224, 224);
     margin-left: 40px;
 }
 
@@ -309,8 +314,8 @@ hr {
         order: 2; 
         text-align: center;
         padding: 0;
-
     }
+
     .centered-div h2 {
         text-align: left;
         width: 250px;
@@ -325,5 +330,3 @@ hr {
         padding: 0;
     }
 }
-
-

@@ -41,11 +41,13 @@
                     <p class="card-description">
                       {{ item.descricao }}
                     </p>
-                    <img src="{{ item.imagem }}" alt="{{ item.nome }}" class="card-image">
-                    <div class="date-card">
+                    {% for img in item.imagem.split(', ') %}
+                      <img src="{{ img }}" alt="{{ item.nome }}" class="card-image">
+                    {% endfor %}
+                    <!-- <div class="date-card">
                       <h4 class="card-date">Data:</h4>
                       <p> {{ item.data }}</p>
-                    </div>
+                    </div> -->
                     <h4 class="card-technologies">
                       Tecnologias:
                       {% for tecnologia in item.tecnologias.split(', ') %}
