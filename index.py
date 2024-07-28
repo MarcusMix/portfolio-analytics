@@ -8,12 +8,18 @@ def data_csv():
     df = df.to_dict(orient="records")
     return df
 
+def data_jobs():
+    df = pd.read_excel("jobs.xlsx")
+    df = df.to_dict(orient="records")
+    return df
+
 @app.route("/")
 def index():
     data = data_csv()
+    jobs = data_jobs()
     description = "Analista de Dados com mais de 1 ano de experiência profissional em analytics, automações, desenvolvimento de dashboards, resolução de problemas e entendimento do negócio."
     description_low = "Cursando Superior em Análise e Desenvolvimento de Sistemas no SENAC."
-    return render_template('index.html' ,description=description, description_low=description_low, data=data)
+    return render_template('index.html' ,description=description, description_low=description_low, data=data, jobs=jobs)
 
 
 @app.route("/projects")

@@ -1,65 +1,93 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
-    <title>Marcus Sandi | Analytics</title>
-  </head>
-  <body>
-    <div class="left">
-      <div class="container">
-        <div class="centered-div">
-          <div class="profile">
-            <h1>Marcus Sandi</h1>
-            <img src="{{ url_for('static', filename='images/eu_profile.jpeg') }}" alt="Marcus Sandi">
-            <p>{{ description }}</p>
-            <p>{{ description_low }}</p>
-          </div>
-          <div class="profile-footer">
-            <a href="https://www.linkedin.com/in/marcus-sandi/" target="_blank">
-              <img src="{{ url_for('static', filename='images/lkd.png') }}" alt="linkedin icon" class="icon">
-            </a>
-            <a href="https://www.github.com/marcusmix" target="_blank">
-              <img src="{{ url_for('static', filename='images/github.png') }}" alt="github icon" class="icon">
-            </a>
-          </div>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+  <title>Marcus Sandi | Analytics</title>
+</head>
+
+<body>
+  <div class="left">
+    <div class="container">
+      <div class="centered-div">
+        <div class="profile">
+          <h1>Marcus Sandi</h1>
+          <img src="{{ url_for('static', filename='images/eu_profile.jpeg') }}" alt="Marcus Sandi">
+          <p>{{ description }}</p>
+          <p>{{ description_low }}</p>
+        </div>
+        <div class="profile-footer">
+          <a href="https://www.linkedin.com/in/marcus-sandi/" target="_blank">
+            <img src="{{ url_for('static', filename='images/lkd.png') }}" alt="linkedin icon" class="icon">
+          </a>
+          <a href="https://www.github.com/marcusmix" target="_blank">
+            <img src="{{ url_for('static', filename='images/github.png') }}" alt="github icon" class="icon">
+          </a>
         </div>
       </div>
     </div>
-    <div class="right">
-      <div class="container container-overflow">
-        <div class="centered-div">
-          <h2>Projetos selecionados em análise de dados, automações e dashboards.</h2>
-          <div class="card-out">
-          {% for item in data %}
-            <hr>  
-            <div class="card">
-                <div class="card-content">
-                    <h3 class="card-title">{{ item.nome }}</h3>
-                    <p class="card-description">
-                      {{ item.descricao }}
-                    </p>
-                    {% for img in item.imagem.split(', ') %}
-                      <img src="{{ img }}" alt="{{ item.nome }}" class="card-image">
-                    {% endfor %}
-                    <!-- <div class="date-card">
-                      <h4 class="card-date">Data:</h4>
-                      <p> {{ item.data }}</p>
-                    </div> -->
-                    <h4 class="card-technologies">
-                      Tecnologias:
-                      {% for tecnologia in item.tecnologias.split(', ') %}
-                        <span class="badge {{ tecnologia }}">{{ tecnologia }}</span>
-                      {% endfor %}
-                    </h4>
-                    <a href="{{ item.link }}" class="card-link" target="_blank">Acessar Projeto</a>
-                </div>
+  </div>
+  <div class="right">
+
+    <div class="container container-overflow">
+      <div class="centered-div">
+        <h2>Minha experiência em dados...</h2>
+        <div class="card-out">
+          {% for job in jobs %}
+          <hr>
+          <div class="card">
+            <div class="card-content">
+              <div class="job-head">
+                <img src="{{ job.img }}" alt="{{ job.cargo }}">
+                <h3 class="card-title">{{ job.cargo }}</h3>
+              </div>
+              <h4 class="card-job"> {{ job.empresa }} | {{ job.data }}</h4>
+              {% if job.atividades is string %}
+                  {% for desc in job.atividades.split('- ') %}
+                      <p class="desc-job">{{ desc }}</p>
+                  {% endfor %}
+              {% else %}
+                  <p class="desc-job">{{ job.atividades }}</p>
+              {% endif %}
+              <h4 class="card-technologies">
+                Tecnologias:
+                {% for tecnologia in job.tecnologias.split(', ') %}
+                <span class="badge">{{ tecnologia }}</span>
+                {% endfor %}
+              </h4>
             </div>
-          {% endfor %}
           </div>
+          {% endfor %}
         </div>
+        <h2>Projetos selecionados em análise de dados, automações e dashboards.</h2>
+        <div class="card-out">
+          {% for item in data %}
+          <hr>
+          <div class="card">
+            <div class="card-content">
+              <h3 class="card-title">{{ item.nome }}</h3>
+              <p class="card-description">
+                {{ item.descricao }}
+              </p>
+              {% for img in item.imagem.split(', ') %}
+              <img src="{{ img }}" alt="{{ item.nome }}" class="card-image">
+              {% endfor %}
+              <h4 class="card-technologies">
+                Tecnologias:
+                {% for tecnologia in item.tecnologias.split(', ') %}
+                <span class="badge {{ tecnologia }}">{{ tecnologia }}</span>
+                {% endfor %}
+              </h4>
+              <a href="{{ item.link }}" class="card-link" target="_blank">Acessar Projeto</a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
     </div>
-  </body>
+</body>
+
 </html>

@@ -213,16 +213,35 @@ a:hover {
     transform: translateY(-10px);
 }
 
+.desc-job {
+    text-align: left;
+}
+
+.job-head {
+    display: flex;
+    flex-direction: row;
+}
+
+.job-head img {
+    width: 30px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
 .card-content {
     padding: 20px;
 }
 
-.card-title {
+.card-title, .card-job {
     font-size: 18px;
     color: #333;
     margin: 0 0 10px;
     text-align: left;
     font-weight: 600;
+}
+
+.card-job {
+    font-size: 14px;
 }
 
 .card-technologies {
@@ -294,6 +313,7 @@ hr {
 }
 
 
+
 @media (max-width: 1000px) {
     body {
         flex-direction: column;
@@ -318,9 +338,8 @@ hr {
 
     .centered-div h2 {
         text-align: left;
-        width: 250px;
+        width: 390px;
         margin-top: 80px;
-        margin-left: 40px;
     }
     .card {
         width: 300px;
