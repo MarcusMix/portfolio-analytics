@@ -36,7 +36,7 @@ body {
     text-align: left;
     width: 500px;
     margin-top: 50px;
-    margin-left: 40px;
+    margin-left: 20px;
     font-size: 20px;
     font-weight: 700;
 }
@@ -228,10 +228,6 @@ a:hover {
     border-radius: 10px;
 }
 
-.card-content {
-    padding: 20px;
-}
-
 .card-title, .card-job {
     font-size: 18px;
     color: #333;
@@ -316,6 +312,7 @@ hr {
 
 @media (max-width: 1000px) {
     body {
+        width: 100vw;
         flex-direction: column;
         height: auto; 
         overflow: auto; 
@@ -337,15 +334,35 @@ hr {
     }
 
     .centered-div h2 {
-        text-align: left;
-        width: 390px;
+        text-align: center;
+        width: 420px;
         margin-top: 80px;
-    }
-    .card {
-        width: 300px;
     }
 
     .container .container-overflow {
         padding: 0;
+    }
+
+    .card-out {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .job-head {
+        align-items: start;
+    }
+
+    .card-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    hr {
+        margin-left: 80px;
     }
 }
