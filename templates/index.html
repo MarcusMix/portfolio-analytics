@@ -46,11 +46,11 @@
               </div>
               <h4 class="card-job"> {{ job.empresa }} | {{ job.data }}</h4>
               {% if job.atividades is string %}
-                  {% for desc in job.atividades.split('- ') %}
-                      <p class="desc-job">{{ desc }}</p>
-                  {% endfor %}
+              {% for desc in job.atividades.split('- ') %}
+              <p class="desc-job">{{ desc }}</p>
+              {% endfor %}
               {% else %}
-                  <p class="desc-job">{{ job.atividades }}</p>
+              <p class="desc-job">{{ job.atividades }}</p>
               {% endif %}
               <h4 class="card-technologies">
                 Tecnologias:

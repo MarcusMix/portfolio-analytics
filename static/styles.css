@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 body {
-    font-family: 'Inter','Fira Sans','PT Sans', 'Poppins', sans-serif;
+    font-family: 'Inter', 'Fira Sans', 'PT Sans', 'Poppins', sans-serif;
     background-color: #ffffff;
     margin: 0;
     padding: 0;
@@ -82,7 +82,7 @@ img {
     border-radius: 0.375rem;
     background-color: #007bff;
     margin-right: 0.5em;
-    margin-bottom: 0.5em; 
+    margin-bottom: 0.5em;
 }
 
 .Python {
@@ -165,9 +165,9 @@ button:active {
 }
 
 a {
-    text-decoration: none; 
-    color: #3477db; 
-    border-radius: 5px; 
+    text-decoration: none;
+    color: #3477db;
+    border-radius: 5px;
     text-align: left;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -203,7 +203,7 @@ a:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-sizing: border-box;
     width: calc(80% - 50px);
-    margin: 20px; 
+    margin: 20px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -228,7 +228,8 @@ a:hover {
     border-radius: 10px;
 }
 
-.card-title, .card-job {
+.card-title,
+.card-job {
     font-size: 18px;
     color: #333;
     margin: 0 0 10px;
@@ -295,7 +296,7 @@ a:hover {
 }
 
 .date-card p {
-    margin: 0; 
+    margin: 0;
 }
 
 
@@ -314,21 +315,25 @@ hr {
     body {
         width: 100vw;
         flex-direction: column;
-        height: auto; 
-        overflow: auto; 
+        height: auto;
+        overflow: auto;
     }
-    .left, .right {
+
+    .left,
+    .right {
         width: 100%;
-        flex: none; 
-        overflow-y: visible; 
-        position: static; 
+        flex: none;
+        overflow-y: visible;
+        position: static;
     }
+
     .left {
         order: 1;
         padding: 0;
     }
+
     .right {
-        order: 2; 
+        order: 2;
         text-align: center;
         padding: 0;
     }
